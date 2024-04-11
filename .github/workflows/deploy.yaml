@@ -12,8 +12,11 @@ jobs:
     - name: Checkout the files
       uses: actions/checkout@v3
     
+    # - name: testanto conexão
+    #   run: ping www.github.com
+
     - name: testanto conexão
-      run: ping www.github.com
+      run: telnet www.github.com 443
 
     - name: Copy files with SSH
       uses: easingthemes/ssh-deploy@main
