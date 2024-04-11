@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: Checkout the files
       uses: actions/checkout@v3
+    
+    - name: testanto conexão
+      run: ping www.github.com
 
     - name: Copy files with SSH
       uses: easingthemes/ssh-deploy@main
