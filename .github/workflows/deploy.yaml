@@ -15,8 +15,8 @@ jobs:
     # - name: testanto conexão
     #   run: ping www.github.com
 
-    - name: testanto conexão
-      run: telnet www.github.com 443
+    # - name: testanto conexão
+    #   run: telnet www.github.com 443
 
     - name: Copy files with SSH
       uses: easingthemes/ssh-deploy@main
@@ -24,8 +24,8 @@ jobs:
         SSH_PRIVATE_KEY: ${{secrets.DEPLOY_GITHUB_ACTIONS}}
         ARGS: "-rltgoDzvO --delete"
         SOURCE: "./"
-        # REMOTE_HOST: ${{secrets.REMOTE_HOST}}
-        REMOTE_HOST: "ec2-54-152-146-225.compute-1.amazonaws.com"
+        REMOTE_HOST: ${{secrets.REMOTE_HOST}}
+        # REMOTE_HOST: "ec2-54-152-146-225.compute-1.amazonaws.com"
         REMOTE_USER: ${{secrets.REMOTE_USER}}
         TARGET: ${{secrets.TARGET_DIR}}
         # EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh"
