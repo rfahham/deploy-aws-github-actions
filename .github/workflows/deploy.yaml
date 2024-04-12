@@ -12,19 +12,22 @@ jobs:
     - name: Checkout the files
       uses: actions/checkout@v3
     
+    - name: testanto conexão
+      run: ls -la
+    
     # - name: testanto conexão
     #   run: ping www.github.com
 
     # - name: testanto conexão
     #   run: telnet www.github.com 443
 
-    - name: Copy files with SSH
-      uses: easingthemes/ssh-deploy@main
-      env:
-        SSH_PRIVATE_KEY: ${{secrets.DEPLOY_GITHUB_ACTIONS}}
-        ARGS: "-rltgoDzvO --delete"
-        SOURCE: "./"
-        REMOTE_HOST: ${{secrets.REMOTE_HOST}}
-        REMOTE_USER: ${{secrets.REMOTE_USER}}
-        TARGET: ${{secrets.TARGET_DIR}}
-        EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
+    # - name: Copy files with SSH
+    #   uses: easingthemes/ssh-deploy@main
+    #   env:
+    #     SSH_PRIVATE_KEY: ${{secrets.DEPLOY_GITHUB_ACTIONS}}
+    #     ARGS: "-rltgoDzvO --delete"
+    #     SOURCE: "./"
+    #     REMOTE_HOST: ${{secrets.REMOTE_HOST}}
+    #     REMOTE_USER: ${{secrets.REMOTE_USER}}
+    #     TARGET: ${{secrets.TARGET_DIR}}
+    #     EXCLUDE: "/dist/, /node_modules/, **.env, rebuild_app.sh, watcher.sh, .git"
